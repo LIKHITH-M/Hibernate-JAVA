@@ -1,0 +1,30 @@
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+    <!-- 
+        The SessionFactory represents a single datastore mapping.
+        It configures the database connection details and Hibernate behaviors. 
+    -->
+    <session-factory>
+        
+        <!-- 1. JDBC CONNECTION SETTINGS -->
+        <!-- PostreSQL driver class to load -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <!-- Connection URL specifying protocol, host, port, and database name -->
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/likhith</property>
+        <!-- Database authentication credentials -->
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">l@123</property>
+        
+        <!-- 2. AUTOMATIC SCHEMA GENERATION -->
+        <!-- 
+            hbm2ddl.auto instructs Hibernate how to manage the database schema:
+            "update" = Updates the schema seamlessly depending on the Entity classes.
+            (Other options: "create", "create-drop", "validate")
+        -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <!-- 3. DEBUGGING & LOGGING -->
+        <!-- Echoes all executed SQL statements to the standard console for easy debugging -->
+        <property name="hibernate.show_sql">true</property>
+
+    </session-factory>
+</hibernate-configuration>
